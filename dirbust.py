@@ -22,12 +22,12 @@ log = open('log.txt', 'w')
 class color:
 	red = '\033[91m'
 	yellow = '\033[93m'
-	green = '\033[94m'
+	blue = '\033[94m'
 	end = '\033[0m'
 
 try:
 	wordlist = open(sys.argv[2],'r')
-	print "\n[+] Opened {0} as wordlist.".format(sys.argv[2])
+	print color.blue + "\n[+] Opened {0} as wordlist.\n".format(sys.argv[2]) + color.end
 except:
 	print color.red + '\n[!] Error! Missing wordlist argument.' + color.end
 	print helptxt
@@ -47,7 +47,7 @@ while True:
 	word = wordlist.readline()
 	word = word.rstrip()
 	if not word:
-		print color.green + "\n[!] End of wordlist reached.\n[+] Log file written. Exiting.\n" + color.end
+		print color.blue + "\n[!] End of wordlist reached.\n[+] Log file written. Exiting.\n" + color.end
 		wordlist.close()
 		log.close()
 		sys.exit(0)
