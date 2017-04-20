@@ -72,3 +72,4 @@ server-info
 server-status
 status
 info.php
+api
